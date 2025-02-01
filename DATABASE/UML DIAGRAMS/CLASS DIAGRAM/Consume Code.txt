@@ -1,0 +1,100 @@
+@startuml
+!theme cerulean-outline
+skinparam classAttributeIconSize 0
+left to right direction
+
+title Class Diagram: Consumer Side
+
+class Consumer {
+  +consumer_id: int
+  +first_name: String
+  +last_name: String
+  +email: String
+  +password: String
+  +confirm_pass: String
+  +state: String
+  +city: String
+  +pincode: String
+  +consumer_type: String
+
+  +login() : void
+  +register() : void
+  +updateDetails() : void
+}
+
+class DeliveryZones {
+  +pincode: String 
+  +city_name: String
+  +district: String
+
+  +isServiceAvailable(): bool
+}
+
+class ConsumerSelections {
+  +selection_Id : int
+  +consumer_Id : int 
+  +rp_category_Id : int 
+}
+
+class RecyclingCategories {
+  +rp_category_id: int 
+  +rp_category_name: String
+  +selectsCategory(): void
+}
+
+class RecyclingSubcategories {
+  +subcategory_id: int 
+  +rp_category_id: int 
+  +subcategory_name: String
+  +price_per_kg: float
+
+  +selectsItems(): void
+
+}
+
+class ConsumerOrders {
+  +order_Id : int 
+  +consumer_Id : int 
+  +order_Date : Date
+  +order_Time : Time
+  +total_OrderAmt : float
+  +placeOrder() : void
+  +editOrder()  : void
+  +viewOrderDetails() : void
+  +calTotalOrderPrice() : void
+}
+
+class OrderItems {
+  +item_Id : int 
+  +order_Id : int 
+  +subcategory_id: int 
+  +quantity_Kg : float
+  +total_Items_Price : float
+  +addItem() : void
+  +removeItem() : void
+  +calTotalItemPrice() : void
+}
+
+class DeliveryAddress {
+  +order_Id : int
+  +consumer_Name : String
+  +state : String
+  +city : String
+  +pincode : String
+  +street_Name : String
+  +landmark : String
+  +addDeliveryAddress() : void
+  +editDeliveryAddress() : void
+  +viewDeliveryAddress() : void
+}
+
+
+
+
+Consumer " 1 " --> " * " DeliveryZones : checks 
+Consumer "1 " -- " * " ConsumerSelections : makes
+ConsumerSelections " * " -- " 1 " RecyclingCategories : includes
+RecyclingCategories "1" -- " * " RecyclingSubcategories : contains
+Consumer "1" -- " * " ConsumerOrders : places
+ConsumerOrders "1" -- "1" DeliveryAddress : has
+ConsumerOrders "1" -- " * " OrderItems : includes

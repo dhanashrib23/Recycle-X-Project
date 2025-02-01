@@ -1,0 +1,101 @@
+@startuml
+!theme cerulean-outline
+skinparam classAttributeIconSize 0
+left to right direction
+
+title Class Diagram: Supplier Side
+
+class Supplier {
+  +supplier_id: int
+  +first_name: String
+  +last_name: String
+  +mobile_number: String
+  +password: String
+  +state: String
+  +city: String
+  +pincode: String
+  +supplier_type: String
+
+  +login() : void
+  +register() : void
+  +updateDetails() : void
+}
+
+class PickupZones {
+  +pincode: String 
+  +district: String
+  +cityname: String
+  +isServiceAvailable(): bool
+}
+
+class SupplierSelections {
+  +selection_Id : int
+  +supplier_Id : int 
+  +category_Id : int 
+}
+
+class TrashCategories {
+  +category_Id : int 
+  +category_name: String
+  +selectCategory(): void 
+}
+
+class TrashSubCategories {
+  +subcategory_Id : int
+  +category_Id : int
+  +subcategory_name : String
+  +price_per_kg: float
+  
+  +selectsItems(): void
+}
+
+class SupplierOrders {
+  +order_id: int 
+  +supplier_id: int 
+  +order_date: Date
+  +order_time: Time
+  +total_OrderAmt : float
+
+  +placeOrder() : void
+  +editOrder()  : void
+  +viewOrderDetails() : void
+  +calTotalOrderPrice() : void
+}
+
+class OrderItems {
+  +item_id: int 
+  +order_id: int 
+  +subcategory_Id : int
+  +quantity_kg: float
+  +total_items_price: float
+  +addItem() : void
+  +removeItem() : void
+  +calTotalItemPrice() : void
+}
+
+class PickupAddress {
+  +order_id: int
+  +supplier_name: String
+  +state: String
+  +city: String
+  +pincode: String
+  +street_name: String
+  +landmark: String
+
+  +addPickUpAddress() : void
+  +editPickUpAddress() : void
+  +viewPickUpAddress() : void
+}
+
+
+
+Supplier "1" -- " * " PickupZones : checks
+Supplier "1" -- " * " SupplierSelections : makes
+SupplierSelections "*" -- " 1 " TrashCategories : includes
+TrashCategories "1" -- " * " TrashSubCategories : contains
+Supplier "1" -- " * " SupplierOrders : places
+SupplierOrders "1" -- " 1 " PickupAddress : has
+SupplierOrders "1" -- " * " OrderItems : includes
+
+
+@enduml

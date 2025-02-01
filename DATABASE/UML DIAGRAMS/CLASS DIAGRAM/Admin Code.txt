@@ -1,0 +1,236 @@
+@startuml
+!theme cerulean-outline
+skinparam classAttributeIconSize 0
+left to right direction
+
+title Class Diagram: Admin Operations
+
+class Admin {
+  +admin_id: int
+  +first_name: String
+  +last_name: String
+  +email: String
+  +password: String
+  +confirm_password: String
+  +role: String
+  +contact_number: String
+  +created_at: Date
+  +updated_at: Date
+
+  +login() : void
+  +register() : void
+  +updateDetails() : void
+  +changePassword() : void
+  +viewAllConsumers() : void
+  +viewAllSuppliers() : void
+  +manageConsumers() : void
+  +manageSuppliers() : void
+}
+
+class Supplier {
+  +supplier_id: int
+  +first_name: String
+  +last_name: String
+  +mobile_number: String
+  +password: String
+  +state: String
+  +city: String
+  +pincode: String
+  +supplier_type: String
+
+  +addSupplier() : void
+  +updateSupplier() : void
+  +deleteSupplier() : void
+}
+
+class Consumer {
+  +consumer_id: int
+  +first_name: String
+  +last_name: String
+  +email: String
+  +password: String
+  +confirm_pass: String
+  +state: String
+  +city: String
+  +pincode: String
+  +consumer_type: String
+
+  +addConsumer() : void
+  +updateConsumer() : void
+  +deleteConsumer() : void
+}
+
+class PickupZones {
+  +pincode: String 
+  +district: String
+  +cityname: String
+
+  +addPickupZone() : void
+  +updatePickupZone() : void
+  +deletePickupZone() : void
+}
+
+class DeliveryZones {
+  +pincode: String 
+  +city_name: String
+  +district: String
+
+  +addDeliveryZone() : void
+  +updateDeliveryZone() : void
+  +deleteDeliveryZone() : void
+}
+
+class SupplierSelections {
+  +selection_Id : int
+  +supplier_Id : int 
+  +category_Id : int 
+}
+
+class ConsumerSelections {
+  +selection_Id : int
+  +consumer_Id : int 
+  +rp_category_Id : int 
+}
+
+
+class TrashCategories {
+  +category_Id : int
+  +category_name : String
+
+  +addTrashCategory() : void
+  +updateTrashCategory() : void
+  +deleteTrashCategory() : void
+}
+
+
+class RecyclingCategories {
+  +rp_category_id: int
+  +rp_category_name: String
+
+  +addRecyclingCategory() : void
+  +updateRecyclingCategory() : void
+  +deleteRecyclingCategory() : void
+}
+
+class TrashSubCategories {
+  +subcategory_Id: int
+  +category_Id: int
+  +subcategory_name: String
+  +price_per_kg: float
+
+  +addTrashSubCategory() : void
+  +updateTrashSubCategory() : void
+  +deleteTrashSubCategory() : void
+}
+
+class RecyclingSubcategories {
+  +subcategory_id: int
+  +rp_category_id: int
+  +subcategory_name: String
+  +price_per_kg: float
+
+  +addRecyclingSubCategory() : void
+  +updateRecyclingSubCategory() : void
+  +deleteRecyclingSubCategory() : void
+}
+
+class SupplierOrders {
+  +order_id: int 
+  +supplier_id: int 
+  +order_date: Date
+  +order_time: Time
+  +total_OrderAmt : float
+  
+  +viewOrderDetails() : void
+
+}
+
+class SOrderItems {
+  +item_id: int 
+  +order_id: int 
+  +subcategory_Id : int
+  +quantity_kg: float
+  +total_items_price: float
+  +viewAllOrderItems() : void
+}
+
+class PickupAddress {
+  +order_id: int
+  +supplier_name: String
+  +state: String
+  +city: String
+  +pincode: String
+  +street_name: String
+  +landmark: String
+  
+  +viewPickUpAddress() : void
+}
+
+class ConsumerOrders {
+  +order_Id : int 
+  +consumer_Id : int 
+  +order_Date : Date
+  +order_Time : Time
+  +total_OrderAmt : float
+
+ +viewOrderDetails() : void
+  
+}
+
+class COrderItems {
+  +item_Id : int 
+  +order_Id : int 
+  +subcategory_id: int 
+  +quantity_Kg : float
+  +total_Items_Price : float
+
+  +viewAllOrderItems() : void
+}
+
+class DeliveryAddress {
+  +order_Id : int
+  +consumer_Name : String
+  +state : String
+  +city : String
+  +pincode : String
+  +street_Name : String
+  +landmark : String
+
+  +viewDeliveryAddress() : void
+}
+
+
+
+Admin "1" --> " * " Supplier : manages
+
+Admin "1" --> " * " Consumer : manages
+
+Supplier "1" --> " * " PickupZones : Admin manages
+
+Consumer "1" --> " * " DeliveryZones : Admin manages
+
+Supplier "1" -- " * " SupplierSelections : makes
+
+SupplierSelections "*" -- " 1 " TrashCategories : Admin manages
+
+Consumer "1 " -- " * " ConsumerSelections : makes
+
+ConsumerSelections " * " -- " 1 " RecyclingCategories : Admin manages
+
+TrashCategories "1" --> " * " TrashSubCategories : manages
+
+RecyclingCategories "1" --> " * " RecyclingSubcategories : manages
+
+Supplier "1" -- " * " SupplierOrders : places
+
+SupplierOrders "1" -- " 1 " PickupAddress : has
+
+SupplierOrders "1" -- " * " SOrderItems : includes
+
+Consumer "1" -- " * " ConsumerOrders : places
+
+ConsumerOrders "1" -- "1" DeliveryAddress : has
+
+ConsumerOrders "1" -- " * " COrderItems : includes
+
+@enduml
