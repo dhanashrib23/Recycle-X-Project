@@ -1,0 +1,1879 @@
+{
+	"info": {
+		"_postman_id": "d7eb26a6-676e-4bad-a09a-06fd936ccc34",
+		"name": "Recycle_X",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40302114"
+	},
+	"item": [
+		{
+			"name": "Comman",
+			"item": [
+				{
+					"name": "getAllServiceZones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlnode}}/common/getServiceZones",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"common",
+								"getServiceZones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllTrashCategories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJzYWtzaGkiLCJsYXN0TmFtZSI6Ikd1cHRhIiwibW9iaWxlTnVtYmVyIjoiMTIzNDU2OTg4MCIsInN0YXR1cyI6IkFjdGl2ZSIsImlhdCI6MTczODczMTA1M30.5hM_jAaEkDwvoSuFWGcD6asKuFMViyUM6eXgzI15uzo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{urlnode}}/common/getAllTrashCategories",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"common",
+								"getAllTrashCategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllTrashSubCategories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJzYWtzaGkiLCJsYXN0TmFtZSI6Im9qaGEiLCJtb2JpbGVOdW1iZXIiOiI3NzU4MDY3MDQ5Iiwic3RhdHVzIjoiQWN0aXZlIiwiaWF0IjoxNzM4NzU2ODMyfQ.SUyOEDxysRpHjB9FO13d9rjFL3BgQuDsWhLXt58dsJw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJzYWtzaGkiLCJsYXN0TmFtZSI6Im9qaGEiLCJtb2JpbGVOdW1iZXIiOiI3NzU4MDY3MDQ5Iiwic3RhdHVzIjoiQWN0aXZlIiwiaWF0IjoxNzM4NzU2ODMyfQ.SUyOEDxysRpHjB9FO13d9rjFL3BgQuDsWhLXt58dsJw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{urlnode}}/common/getAllTrashSubCategories",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"common",
+								"getAllTrashSubCategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllRecyclingCategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlnode}}/common/getAllRecyclingCategories",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"common",
+								"getAllRecyclingCategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllRecyclingSubCategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlnode}}/common/getAllRecyclingSubCategories",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"common",
+								"getAllRecyclingSubCategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findServiceByPincode",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pincode\":400001\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/common/findServiceByPincode",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"common",
+								"findServiceByPincode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJzYWtzaGkiLCJsYXN0TmFtZSI6Im9qaGEiLCJtb2JpbGVOdW1iZXIiOiI3NzU4MDY3MDQ5Iiwic3RhdHVzIjoiQWN0aXZlIiwiaWF0IjoxNzM4NzU2ODMyfQ.SUyOEDxysRpHjB9FO13d9rjFL3BgQuDsWhLXt58dsJw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJzYWtzaGkiLCJsYXN0TmFtZSI6Im9qaGEiLCJtb2JpbGVOdW1iZXIiOiI3NzU4MDY3MDQ5Iiwic3RhdHVzIjoiQWN0aXZlIiwiaWF0IjoxNzM4NzU2ODMyfQ.SUyOEDxysRpHjB9FO13d9rjFL3BgQuDsWhLXt58dsJw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{urlnode}}/common/getAllTrashSubCategoriesbycatid/1",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"common",
+								"getAllTrashSubCategoriesbycatid",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consumer",
+			"item": [
+				{
+					"name": "loginConsumer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"amit.sharma@example.com\",\r\n  \"password\":\"StrongPass@456\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/consumer/signin",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"consumer",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerConsumer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Amit\",\r\n  \"lastName\": \"Sharma\",\r\n  \"email\": \"amit.shvxcarma@example.com\",\r\n  \"mobileNumber\": \"9476543210\",\r\n  \"password\": \"StrongPass@456\",\r\n  \"state\": \"Karnataka\",\r\n  \"city\": \"Bangalore\",\r\n  \"pincode\": \"560001\",\r\n  \"consumerType\": \"Individual\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/consumer/signup",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"consumer",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateConsumer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Rajvardhan\",\r\n  \"lastName\": \"Patil\",\r\n  \"email\": \"raj@example.com\",\r\n  \"mobileNumber\": \"9075857927\",\r\n  \"password\": \"pass\",\r\n  \"state\": \"Maharashtra\",\r\n  \"city\": \"Kolhapur\",\r\n  \"pincode\": \"416114\",\r\n  \"consumerType\":\"Individual\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/consumer/update/1",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"consumer",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showCart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJBbWl0IiwibGFzdE5hbWUiOiJTaGFybWEiLCJlbWFpbCI6ImFtaXQuc2hhcm1hQGV4YW1wbGUuY29tIiwic3RhdHVzIjoiQWN0aXZlIiwiaWF0IjoxNzM1NjQzOTU1fQ.4SQyB00H7ignCAe5JLGOCUewHQWFqZTQvTu8EMLCLE0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/consumer/showcart",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"consumer",
+								"showcart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addToCart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/consumer/addcart/1",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"consumer",
+								"addcart",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeFromCart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/consumer/removecart/3",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"consumer",
+								"removecart",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllDeliveryAddress",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/consumer/delivery",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"consumer",
+								"delivery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addDeliveryAddress",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"consumerId\":\"1\",\r\n    \"consumerName\":\"sam\",\r\n    \"state\":\"asam\",\r\n    \"city\":\"guhahati\",\r\n   \"pincode\":\"500001\",\r\n    \"streetName\":\"barshi\",\r\n    \"landmark\":\"solapur\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/consumer/delivery",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"consumer",
+								"delivery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateDeliveryAddress",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"consumerId\":\"1\",\r\n    \"consumerName\":\"Raj\",\r\n    \"state\":\"Maharashtra\",\r\n    \"city\":\"guhahati\",\r\n   \"pincode\":\"500001\",\r\n    \"streetName\":\"barshi\",\r\n    \"landmark\":\"solapur\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/consumer/delivery/1",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"consumer",
+								"delivery",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteDeliveryAddress",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{urlnode}}/consumer/delivery/1",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"consumer",
+								"delivery",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placeOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"consumerId\":1,\r\n    \"deliveryId\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/consumer/placeorder",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"consumer",
+								"placeorder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllOrdersByConsumer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlnode}}/consumer/orders/1",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"consumer",
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderItemDetails",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\":2,\r\n    \"itemId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/consumer/orderdetail",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"consumer",
+								"orderdetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "uploadProfileImg",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/raj20/Downloads/man.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{urlnode}}/consumer/uploadimg/1",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"consumer",
+								"uploadimg",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Supplier",
+			"item": [
+				{
+					"name": "loginSupplier",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"mobileNumber\": \"7758067049\",\r\n  \"password\":\"pass2\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/supplier/signin",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"supplier",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerSupplier",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"sakshi\",\r\n  \"lastName\": \"ojha\",\r\n  \"mobileNumber\": \"7758067049\",\r\n  \"password\": \"pass2\",\r\n  \"state\": \"Uttar Pradesh\",\r\n  \"city\": \"Kanpur\",\r\n  \"pincode\": \"208001\",\r\n  \"supplierType\": \"Individual\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/supplier/signup",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"supplier",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSupplier",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n \"firstName\": \"Rajvardhan\",\r\n \"lastName\": \"Patil\", \r\n \"mobileNumber\": \"7758067095\", \r\n \"password\": \"pass\", \r\n \"state\": \"Maharashtra\",\r\n \"city\": \"Satara\", \r\n \"pincode\": \"415116\",\r\n \"supplierType\": \"Individual\"    \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/supplier/update/1",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"supplier",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showCart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJSYWtlc2giLCJsYXN0TmFtZSI6Ikd1cHRhIiwibW9iaWxlTnVtYmVyIjoiODg1OTAyMzQ3MSIsInN0YXR1cyI6IkFjdGl2ZSIsImlhdCI6MTczNzg3NDE1Nn0.OLPkqvpCLNaiTKW1eZKvsAL1uYkQH4WOB-iEZm6zTrA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/supplier/showcart",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"supplier",
+								"showcart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addToCart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJzYWtzaGkiLCJsYXN0TmFtZSI6Ikd1cHRhIiwibW9iaWxlTnVtYmVyIjoiMTIzNDU2OTg4MCIsInN0YXR1cyI6IkFjdGl2ZSIsImlhdCI6MTczODczMTA1M30.5hM_jAaEkDwvoSuFWGcD6asKuFMViyUM6eXgzI15uzo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/supplier/addcart/1",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"supplier",
+								"addcart",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeFromCart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/supplier/removecart/2",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"supplier",
+								"removecart",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPickUpAddress",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/supplier/pickup",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"supplier",
+								"pickup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addPickUpAddress",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"supplierId\":1,\r\n    \"supplierName\":\"Dhanu\",\r\n    \"state\":\"Maharastra\",\r\n    \"city\":\"Satara\",\r\n    \"pincode\":53423,\r\n    \"street_name\":\"ShivajiChowk\",\r\n    \"landmark\":\"Near Shivaji Park\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/supplier/pickup",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"supplier",
+								"pickup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePickUpAddress",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"supplierId\":1,\r\n    \"supplierName\":\"Dhanashri\",\r\n    \"state\":\"Maharastra\",\r\n    \"city\":\"Satara\",\r\n    \"pincode\":53459,\r\n    \"street_name\":\"ShivajiChowk\",\r\n    \"landmark\":\"Near Shivaji Park1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/supplier/pickup/1",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"supplier",
+								"pickup",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePickUpAddress",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{urlnode}}/supplier/pickup/2",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"supplier",
+								"pickup",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placeOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"supplierId\":1,\r\n    \"pickupId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/supplier/placeorder",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"supplier",
+								"placeorder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllOrdersBySupplier",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/supplier/orders/1",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"supplier",
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderItemDetails",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\":1,\r\n    \"itemId\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlnode}}/supplier/orderdetail",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"supplier",
+								"orderdetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "uploadProfileImg",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/raj20/Downloads/man.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{urlnode}}/supplier/uploadimg/1",
+							"host": [
+								"{{urlnode}}"
+							],
+							"path": [
+								"supplier",
+								"uploadimg",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Supplier",
+					"item": [
+						{
+							"name": "getAllSuppliers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/supplier/",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"supplier",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteSupplierById",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/supplier/2",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"supplier",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSupplierById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/supplier/1",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"supplier",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSupplierOrdersById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/supplier/orders/1",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"supplier",
+										"orders",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSupplierOrderItemsById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/supplier/orderItems/3",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"supplier",
+										"orderItems",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateSupplierOrderStatus",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/supplier/updateOrderStatus/1?status=completed",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"supplier",
+										"updateOrderStatus",
+										"1"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "completed"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updatePrice",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/supplier/updatePrice/2?price=200.20",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"supplier",
+										"updatePrice",
+										"2"
+									],
+									"query": [
+										{
+											"key": "price",
+											"value": "200.20"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addTrashCategory",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "categoryName",
+											"value": "plasticScrap",
+											"type": "text"
+										},
+										{
+											"key": "categoryDescription",
+											"value": "plastic bottles garbage",
+											"type": "text"
+										},
+										{
+											"key": "categoryImage",
+											"type": "file",
+											"src": "/E:/Recycle-X-Project/Recycle-X-Project/IMAGES/GARBAGE IMAGES/Plastic_Scrap_X1.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{urladmin}}/admin/supplier/addTrashCategory",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"supplier",
+										"addTrashCategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addTrashSubcategory",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "categoryId",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "subcategoryName",
+											"value": "softPlastic",
+											"type": "text"
+										},
+										{
+											"key": "pricePerKg",
+											"value": "50.50",
+											"type": "text"
+										},
+										{
+											"key": "subcategoryImage",
+											"type": "file",
+											"src": "/E:/Recycle-X-Project/Recycle-X-Project/IMAGES/GARBAGE IMAGES/Plastic_Scrap_X1.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{urladmin}}/admin/supplier/addTrashSubcategory",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"supplier",
+										"addTrashSubcategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getMonthlyTrashById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/supplier/monthlyTrash/1",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"supplier",
+										"monthlyTrash",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getYearlyTrashById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/supplier/yearlyTrash/1",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"supplier",
+										"yearlyTrash",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getMonthlyTrashForAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/supplier/monthlyTrashAll",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"supplier",
+										"monthlyTrashAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getYearlyTrashForAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/supplier/yearlyTrashAll",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"supplier",
+										"yearlyTrashAll"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Consumer",
+					"item": [
+						{
+							"name": "getAllConsumers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/consumer/",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"consumer",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllConsumerById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/consumer/1",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"consumer",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteConsumerById",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/consumer/5",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"consumer",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getConsumerAllOrders",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/consumer/orders/1",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"consumer",
+										"orders",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getConsumerOrderItems",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/consumer/orderItems/1",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"consumer",
+										"orderItems",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateConsumerOrderStatusById",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/consumer/updateOrderStatus/1?status=completed",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"consumer",
+										"updateOrderStatus",
+										"1"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "completed"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updatePriceById",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/consumer/updatePrice/1?price=20.20",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"consumer",
+										"updatePrice",
+										"1"
+									],
+									"query": [
+										{
+											"key": "price",
+											"value": "20.20"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addRecyclingCategory",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "categoryName",
+											"value": "plastic",
+											"type": "text"
+										},
+										{
+											"key": "categoryDescription",
+											"value": "recycled pieces of plastic",
+											"type": "text"
+										},
+										{
+											"key": "categoryImage",
+											"type": "file",
+											"src": "/E:/Recycle-X-Project/Recycle-X-Project/IMAGES/GARBAGE IMAGES/Plastic_Scrap_X1.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{urladmin}}/admin/consumer/addRecyclingCategory",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"consumer",
+										"addRecyclingCategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addRecyclingSubCategory",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "categoryId",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "pricePerKg",
+											"value": "20.20",
+											"type": "text"
+										},
+										{
+											"key": "subcategoryImage",
+											"type": "file",
+											"src": "/E:/Recycle-X-Project/Recycle-X-Project/IMAGES/GARBAGE IMAGES/Plastic_Scrap_X1.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{urladmin}}/admin/consumer/addRecyclingSubcategory",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"consumer",
+										"addRecyclingSubcategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getMonthlyRecycling",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/consumer/monthlyRecycling/1",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"consumer",
+										"monthlyRecycling",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getYearlyRecycling",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/consumer/yearlyRecycling/1",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"consumer",
+										"yearlyRecycling",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getMonthlyRecyclingForAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/consumer/monthlyRecyclingAll",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"consumer",
+										"monthlyRecyclingAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getYearlyRecyclingForAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{urladmin}}/admin/consumer/yearlyRecyclingAll",
+									"host": [
+										"{{urladmin}}"
+									],
+									"path": [
+										"admin",
+										"consumer",
+										"yearlyRecyclingAll"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "loginAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"raj@gmail.com\",\r\n    \"password\": \"pass\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urladmin}}/admin/signin",
+							"host": [
+								"{{urladmin}}"
+							],
+							"path": [
+								"admin",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Rajvardhan\",\r\n    \"lastName\": \"Patil\",\r\n    \"email\": \"raj@example.com\",\r\n    \"password\": \"pass\",\r\n    \"isActive\": 1\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urladmin}}/admin/signup",
+							"host": [
+								"{{urladmin}}"
+							],
+							"path": [
+								"admin",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAdmin",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Dhansshri\",\r\n    \"lastName\": \"Patil\",\r\n    \"email\": \"Dhanu@example.com\",\r\n    \"password\": \"pass\",\r\n    \"isActive\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urladmin}}/admin/1",
+							"host": [
+								"{{urladmin}}"
+							],
+							"path": [
+								"admin",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllAdmins",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urladmin}}/admin/",
+							"host": [
+								"{{urladmin}}"
+							],
+							"path": [
+								"admin",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAdminById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{urladmin}}/admin/1",
+							"host": [
+								"{{urladmin}}"
+							],
+							"path": [
+								"admin",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addServiceZone",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pincode\": \"560001\",\r\n    \"state\": \"Karnataka\",\r\n    \"city\": \"Bangalore\",\r\n    \"district\": \"Bangalore Urban\",\r\n    \"serviceType\": \"Both\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urladmin}}/admin/servicezone",
+							"host": [
+								"{{urladmin}}"
+							],
+							"path": [
+								"admin",
+								"servicezone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllOrdersBySupplier",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urladmin}}/admin/supplier/orders/1",
+							"host": [
+								"{{urladmin}}"
+							],
+							"path": [
+								"admin",
+								"supplier",
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteServiceZone",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urladmin}}/admin/servicezone/560001",
+							"host": [
+								"{{urladmin}}"
+							],
+							"path": [
+								"admin",
+								"servicezone",
+								"560001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateServiceZone",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"state\": \"Maharashtra\",\r\n    \"city\": \"Bangalore\",\r\n    \"district\": \"Bangalore Urban\",\r\n    \"serviceType\": \"Both\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urladmin}}/admin/servicezone/560001",
+							"host": [
+								"{{urladmin}}"
+							],
+							"path": [
+								"admin",
+								"servicezone",
+								"560001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllServiceZones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urladmin}}/admin/servicezone",
+							"host": [
+								"{{urladmin}}"
+							],
+							"path": [
+								"admin",
+								"servicezone"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "urlnode",
+			"value": "http://localhost:5000",
+			"type": "string"
+		},
+		{
+			"key": "urladmin",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
