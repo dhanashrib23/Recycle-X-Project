@@ -8,17 +8,15 @@ import { useNavigate } from "react-router-dom";
 
 const RotatingEarth = () => {
   const earthRef = useRef();
-  // Slowed down the rotation speed
   useFrame(() => {
     if (earthRef.current) {
-      earthRef.current.rotation.y += 0.01; // Slower rotation speed
+      earthRef.current.rotation.y += 0.01;
     }
   });
 
   return (
     <mesh ref={earthRef}>
-      {/* Increased size of the sphere */}
-      <sphereGeometry args={[2, 32, 32]} /> {/* Increased radius */}
+      <sphereGeometry args={[2, 32, 32]} />
       <meshStandardMaterial map={new THREE.TextureLoader().load(logo)} />
     </mesh>
   );
@@ -32,9 +30,9 @@ const Dashboard = () => {
       className="position-relative min-vh-100 bg-cover bg-center"
       style={{
         backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover", // Ensure background fits the screen
-        backgroundPosition: "center center", // Center the background image
-        backgroundAttachment: "fixed", // Keep the background fixed during scrolling
+        backgroundSize: "cover",
+        backgroundPosition: "center center",
+        backgroundAttachment: "fixed",
       }}
     >
       {/* Navbar */}
@@ -49,6 +47,9 @@ const Dashboard = () => {
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -87,6 +88,7 @@ const Dashboard = () => {
           </div>
         </div>
       </nav>
+
       {/* Welcome Section with 3D Earth */}
       <div className="container text-center mt-5">
         <h2 className="display-4 fw-bold text-success">Welcome to RecycleX</h2>
@@ -94,7 +96,7 @@ const Dashboard = () => {
           Transforming the Waste into Resources, <br /> Rebuilding Nature...!
         </p>
         <div className="d-flex justify-content-center mt-4">
-          <Canvas style={{ width: "300px", height: "300px" }}>
+          <Canvas style={{ width: "100%", height: "300px", maxWidth: "500px" }}>
             <ambientLight intensity={0.5} />
             <directionalLight position={[2, 2, 2]} />
             <RotatingEarth />

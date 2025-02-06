@@ -14,6 +14,8 @@ import OrderSummaryConsumer from "./components/OrderSummaryConsumer";
 import PlaceOrderSupplier from "./components/PlaceOrderSupplier";
 import PlaceOrderConsumer from "./components/PlaceOrderConsumer";
 import AboutUs from "./components/AboutUs";
+import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
+
 
 const App = () => {
   return (

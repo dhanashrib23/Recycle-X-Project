@@ -113,6 +113,83 @@ END //
 DELIMITER ;
 
 -- ================= SUPPLIER REGISTRATION=======================
+-- DELIMITER //
+
+-- CREATE PROCEDURE register_supplier(
+--     IN p_first_name VARCHAR(50),
+--     IN p_last_name VARCHAR(50),
+--     IN p_mobile_number VARCHAR(15),
+--     IN p_password VARCHAR(255),
+--     IN p_state VARCHAR(50),
+--     IN p_city VARCHAR(50),
+--     IN p_pincode CHAR(6),
+--     IN p_supplier_type ENUM('Individual', 'Organization', 'Government')
+-- )
+-- BEGIN
+--     DECLARE new_supplier_id INT;
+--     DECLARE full_name VARCHAR(101);
+
+--     -- Start transaction to ensure both inserts succeed or none does
+--     START TRANSACTION;
+    
+--     -- Insert into supplier table
+--     INSERT INTO supplier (
+--         first_name,
+--         last_name,
+--         mobile_number,
+--         password,
+--         state,
+--         city,
+--         pincode,
+--         supplier_type
+--     ) VALUES (
+--         p_first_name,
+--         p_last_name,
+--         p_mobile_number,
+--         p_password,
+--         p_state,
+--         p_city,
+--         p_pincode,
+--         p_supplier_type
+--     );
+    
+--     -- Get the new supplier_id
+--     SET new_supplier_id = LAST_INSERT_ID();
+    
+--     -- Concatenate first_name and last_name
+--     SET full_name = CONCAT(p_first_name, ' ', p_last_name);
+    
+--     -- Insert into pickupAddress table
+--     INSERT INTO pickupAddress (
+--         supplier_id,
+--         supplier_name,
+--         state,
+--         city,
+--         pincode,
+--         street_name,
+--         landmark
+--     ) VALUES (
+--         new_supplier_id,
+--         full_name,
+--         p_state,
+--         p_city,
+--         p_pincode,
+--         '',  -- Empty string for street_name
+--         ''   -- Empty string for landmark
+--     );
+    
+--     -- If everything is successful, commit the transaction
+--     COMMIT;
+
+-- END //
+
+-- DELIMITER ;
+
+
+-- ==================== updated SUPPLIER REGISTRATION ===============================
+
+DROP PROCEDURE IF EXISTS register_supplier;
+
 DELIMITER //
 
 CREATE PROCEDURE register_supplier(
@@ -128,6 +205,7 @@ CREATE PROCEDURE register_supplier(
 BEGIN
     DECLARE new_supplier_id INT;
     DECLARE full_name VARCHAR(101);
+    DECLARE registration_status VARCHAR(50);
 
     -- Start transaction to ensure both inserts succeed or none does
     START TRANSACTION;
@@ -180,6 +258,12 @@ BEGIN
     
     -- If everything is successful, commit the transaction
     COMMIT;
+    
+    -- Set status to 'success' after both inserts
+    SET registration_status = 'success';
+
+    -- Return success status
+    SELECT registration_status AS status;
 
 END //
 

@@ -8,6 +8,52 @@ const nodemailer = require("nodemailer");
 const otpGenerator = require("otp-generator");
 
 // Suppiler Controller
+// const registerSupplier = (request, response) => {
+//   const encryptPass = String(crypto.SHA256(request.body.password));
+//   const values = [
+//     request.body.firstName,
+//     request.body.lastName,
+//     request.body.mobileNumber,
+//     encryptPass,
+//     request.body.state,
+//     request.body.city,
+//     request.body.pincode,
+//     request.body.supplierType,
+//   ];
+
+//   const statement = `CALL register_supplier(?, ?, ?, ?, ?, ?, ?, ?)`;
+
+//   db.execute(statement, values, (error, result) => {
+//     if (error) {
+//       return response
+//         .status(400)
+//         .json(
+//           reply.onError(
+//             400,
+//             error,
+//             "There was an error with the request. Some fields may be missing or incorrect."
+//           )
+//         );
+//     }
+
+//     if (result.affectedRows === 0) {
+//       return response
+//         .status(500)
+//         .json(
+//           reply.onError(
+//             500,
+//             null,
+//             "Supplier registration failed. Please try again."
+//           )
+//         );
+//     }
+
+//     return response
+//       .status(201)
+//       .json(reply.onSuccess(201, result, "Supplier registered successfully."));
+//   });
+// };
+
 const registerSupplier = (request, response) => {
   const encryptPass = String(crypto.SHA256(request.body.password));
   const values = [
@@ -25,6 +71,7 @@ const registerSupplier = (request, response) => {
 
   db.execute(statement, values, (error, result) => {
     if (error) {
+      console.error("Error during supplier registration:", error); // Log the error for debugging
       return response
         .status(400)
         .json(
@@ -36,21 +83,33 @@ const registerSupplier = (request, response) => {
         );
     }
 
-    if (result.affectedRows === 0) {
+    // Log the result to understand what is returned
+    console.log("Database result:", result);
+
+    // Check if the result contains the success status
+    if (
+      result &&
+      result[0] &&
+      result[0][0] &&
+      result[0][0].status === "success"
+    ) {
       return response
-        .status(500)
+        .status(201)
         .json(
-          reply.onError(
-            500,
-            null,
-            "Supplier registration failed. Please try again."
-          )
+          reply.onSuccess(201, result, "Supplier registered successfully.")
         );
     }
 
+    // If status is not 'success'
     return response
-      .status(201)
-      .json(reply.onSuccess(201, result, "Supplier registered successfully."));
+      .status(500)
+      .json(
+        reply.onError(
+          500,
+          null,
+          "Supplier registration failed. Please try again."
+        )
+      );
   });
 };
 
@@ -161,23 +220,22 @@ const updateSupplier = (request, response) => {
 };
 
 const addToCart = (request, response) => {
-  const subCategoryId = request.params.id;
-  const { quantity } = request.body;
+  const subCategoryId = request.params.id; // Get ID from URL
+  const { quantity_kg } = request.body; // Get quantity from body
 
-  // Check if the required fields are provided
-  if (!subCategoryId || !quantity) {
+  if (!subCategoryId || !quantity_kg) {
     return response
       .status(400)
       .json(
         reply.onError(
           400,
-          null,
+          error,
           "Missing required fields: subCategoryId or quantity."
         )
       );
   }
 
-  const values = [subCategoryId, quantity];
+  const values = [subCategoryId, quantity_kg];
   const statement = `INSERT INTO ${supplier.SUPPLIER_CART} (subcategory_id, quantity_kg) VALUES (?, ?)`;
 
   db.execute(statement, values, (error, result) => {
@@ -186,7 +244,7 @@ const addToCart = (request, response) => {
         .status(500)
         .json(
           reply.onError(
-            500,
+            400,
             error,
             "Error adding item to cart. Please try again."
           )
@@ -195,11 +253,41 @@ const addToCart = (request, response) => {
       return response
         .status(201)
         .json(
-          reply.onSuccess(201, result, "Order item added to cart successfully.")
+          reply.onSuccess(400, error, "Order item added to cart successfully.")
         );
     }
   });
 };
+
+// const addToCart = (request, response) => {
+//   const subCategoryId = request.params.id; // Get ID from URL
+//   const { quantity_kg, price_per_kg } = request.body; // Get quantity and price from body
+
+//   if (!subCategoryId || !quantity_kg || !price_per_kg) {
+//     return response.status(400).json({
+//       status: "error",
+//       message: "Missing required fields: subCategoryId, quantity, or price.",
+//     });
+//   }
+
+//   const total_price = quantity_kg * price_per_kg;
+//   const values = [subCategoryId, quantity_kg, price_per_kg, total_price];
+//   const statement = `INSERT INTO ${supplier.SUPPLIER_CART} (subcategory_id, quantity_kg, price_per_kg, total_price) VALUES (?, ?, ?, ?)`;
+
+//   db.execute(statement, values, (error, result) => {
+//     if (error) {
+//       return response.status(500).json({
+//         status: "error",
+//         message: "Error adding item to cart. Please try again.",
+//       });
+//     } else {
+//       return response.status(201).json({
+//         status: "success",
+//         message: "Order item added to cart successfully.",
+//       });
+//     }
+//   });
+// };
 
 const removeFromCart = (request, response) => {
   const cartId = request.params.id;
