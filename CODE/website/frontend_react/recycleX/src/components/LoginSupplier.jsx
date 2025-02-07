@@ -248,7 +248,7 @@ const LoginSupplier = () => {
               <div className="text-center mt-3">
                 <p>
                   Don't have an account?{" "}
-                  <a href="/signup" className="text-primary">
+                  <a href="/registersupplier" className="text-primary">
                     Sign up!
                   </a>
                 </p>

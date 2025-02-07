@@ -4,7 +4,7 @@ import * as THREE from "three";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../assets/logo.webp";
 import backgroundImage from "../assets/BackgroundImg.jpg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const RotatingEarth = () => {
   const earthRef = useRef();
@@ -38,10 +38,10 @@ const Dashboard = () => {
       {/* Navbar */}
       <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div className="container">
-          <a className="navbar-brand d-flex align-items-center" href="#">
+          <Link className="navbar-brand d-flex align-items-center" to="/">
             <img src={logo} alt="RecycleX Logo" className="me-2" height="40" />
             <h1 className="fs-4 fw-bold text-success m-0">RecycleX</h1>
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -55,18 +55,31 @@ const Dashboard = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
-              {["Home", "About Us", "Services", "Products", "Contact Us"].map(
-                (item) => (
-                  <li className="nav-item" key={item}>
-                    <a
-                      href={`#${item.toLowerCase().replace(/ /g, "-")}`}
-                      className="nav-link text-dark"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+              <li className="nav-item">
+                <Link to="/" className="nav-link text-dark">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/aboutus" className="nav-link text-dark">
+                  About Us
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/services" className="nav-link text-dark">
+                  Services
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/products" className="nav-link text-dark">
+                  Products
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/contact" className="nav-link text-dark">
+                  Contact Us
+                </Link>
+              </li>
             </ul>
             <form className="d-flex ms-3">
               <input
