@@ -47,6 +47,7 @@ app.use((req, res, next) => {
 
   // Check if authorization header is present
   const authHeader = req.headers.authorization;
+  console.log(authHeader);
   if (!authHeader) {
     return res
       .status(403)

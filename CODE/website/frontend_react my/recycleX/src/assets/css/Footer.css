@@ -1,0 +1,60 @@
+   /* Footer.css */
+.footer {
+  background-color: black; /* Black background */
+  color: white; /* White text */
+  padding: 20px 0; /* Adjust padding as needed */
+}
+
+.footer .container {
+  max-width: 1200px; /* Or your preferred container width */
+}
+
+.footer-content {
+  display: flex; /* Arrange sections horizontally */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  justify-content: space-between; /* Distribute sections evenly */
+  align-items: flex-start; /* Align items to the top of the container */
+}
+
+.footer-section {
+  margin-right: 20px; /* Add spacing between sections */
+}
+
+.footer-section h5 {
+  color: white; /* White heading text */
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 5px;
+}
+
+.footer-section a {
+  color: white; /* White link text */
+  text-decoration: none;
+}
+
+.social-icons .list-inline-item {
+  margin-right: 10px; /* Adjust spacing between social icons */
+}
+
+/* Responsive adjustments (example) */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack sections vertically on smaller screens */
+    align-items: center; /* Center content horizontally */
+  }
+
+  .footer-section {
+    margin: 10px 0; /* Add spacing between sections vertically */
+    text-align: center; /* Center text within sections */
+  }
+
+  .social-icons {
+    text-align: center; /* Center social icons */
+  }
+}

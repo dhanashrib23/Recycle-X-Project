@@ -22,3 +22,17 @@
 {"method":"POST","url":"/supplier/getOTP","status":"201","responseTime":"2384.233"}
 {"method":"POST","url":"/supplier/getOTP","status":"201","responseTime":"3619.391"}
 {"method":"POST","url":"/supplier/getOTP","status":"201","responseTime":"2627.423"}
+{"method":"GET","url":"/common/getAllTrashCategories","status":"403","responseTime":"10.578"}
+{"method":"GET","url":"/common/getAllTrashCategories","status":"403","responseTime":"0.979"}
+{"method":"GET","url":"/common/getAllTrashCategories","status":"403","responseTime":"0.773"}
+{"method":"GET","url":"/common/getAllTrashCategories","status":"403","responseTime":"0.446"}
+{"method":"GET","url":"/common/getAllTrashCategories","status":"403","responseTime":"0.414"}
+{"method":"GET","url":"/common/getAllTrashCategories","status":"403","responseTime":"0.682"}
+{"method":"GET","url":"/common/getAllTrashCategories","status":"403","responseTime":"0.417"}
+{"method":"GET","url":"/common/getAllTrashCategories","status":"403","responseTime":"0.418"}
+{"method":"GET","url":"/common/getAllTrashCategories","status":"403","responseTime":"1.856"}
+{"method":"GET","url":"/common/getAllTrashCategories","status":"403","responseTime":"1.749"}
+{"method":"GET","url":"/common/getAllTrashCategories","status":"403","responseTime":"0.424"}
+{"method":"GET","url":"/common/getAllTrashCategories","status":"403","responseTime":"0.572"}
+{"method":"GET","url":"/common/getAllTrashCategories","status":"403","responseTime":"0.584"}
+{"method":"GET","url":"/common/getAllTrashCategories","status":"403","responseTime":"0.620"}
