@@ -1,0 +1,166 @@
+/* UserTypeSelection.module.css */
+.userTypeContainer {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.userTypeContainer.visible {
+    opacity: 1;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
+.spacedCard {
+    margin: 0 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    /* For hover elevation */
+}
+
+.spacedCard:hover {
+    transform: translateY(-5px);
+    /* Elevate card on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    /* More prominent shadow on hover */
+}
+
+.supplierCard {
+    background-color: #f0f0f0;
+    /* Light gray for Supplier card */
+}
+
+.consumerCard {
+    background-color: #e6f2ff;
+    /* Light blue for Consumer card */
+}
+
+.signInButton {
+    /* Styles for the Sign In button */
+    display: inline-block;
+    background-color: green;
+    color: white;
+    border: none;
+    margin: 5px;
+    padding: 8px 16px;
+    /* Adjust padding as needed */
+    border-radius: 5px;
+    text-decoration: none;
+    /* Remove underline from link */
+    text-align: center;
+    /* Adjust border radius as needed */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    /* Smooth transition */
+}
+
+.signInButton:hover {
+    background-color: rgb(211, 210, 210);
+}
+
+
+.signUpButton {
+    /* Styles for the Sign Up button */
+    display: inline-block;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    padding: 8px 16px;
+    /* Adjust padding as needed */
+    border-radius: 5px;
+    margin: 5px;
+    /* Adjust border radius as needed */
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: none;
+    /* Remove underline from link */
+    text-align: center;
+    /* Space above button */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    /* Smooth transition */
+}
+
+.signUpButton:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Help Button */
+.helpButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    background-color: #4f46e5;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-weight: 600;
+    font-size: 14px;
+    z-index: 1000;
+    /* Ensures Help button stays above all elements */
+}
+
+.helpButton:hover {
+    background-color: #4338ca;
+}
+
+.helpIcon {
+    font-size: 16px;
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 250px;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    z-index: 1001;
+    /* Ensures tooltip stays above everything */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip h6 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.tooltip p {
+    margin: 4px 0;
+}
+
+.tooltip hr {
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .helpButton {
+        top: 10px;
+        /* Move button slightly lower */
+        right: 10px;
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .tooltip {
+        width: 200px;
+        /* Reduce tooltip width for smaller screens */
+        font-size: 11px;
+    }
+}

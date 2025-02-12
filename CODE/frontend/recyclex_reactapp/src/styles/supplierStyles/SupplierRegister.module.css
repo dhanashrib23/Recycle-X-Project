@@ -1,0 +1,175 @@
+/* SupplierSignup.module.css */
+.signupContainer {
+    display: flex;
+    min-height: 100vh;
+    margin: 20px;
+    background-color: #f4f4f4;
+    font-family: sans-serif;
+}
+
+.imageSide {
+    flex-basis: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px 0 0 8px;
+}
+
+.signupImage {
+    max-width: 90%;
+    height: auto;
+}
+
+.formSide {
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: white;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.formSide h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.signupForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.nameFields {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.inputGroup {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.inputGroup label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.error {
+    border-color: red;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.locationFields,
+.pincodeAndTypeFields {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.locationFields .inputGroup,
+.pincodeAndTypeFields .inputGroup {
+    flex: 1;
+    width: 48%;
+}
+
+.signupButton {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signupButton:hover {
+    background-color: #0056b3;
+}
+
+.loginLink {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+.loginLink a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.loginLink a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .signupContainer {
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .imageSide {
+        display: none;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .formSide {
+        flex-basis: 100%;
+        padding: 20px;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .signupForm {
+        width: 95%;
+    }
+
+    .nameFields,
+    .locationFields,
+    .pincodeAndTypeFields {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nameFields .inputGroup,
+    .locationFields .inputGroup,
+    .pincodeAndTypeFields .inputGroup {
+        flex: 1;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}

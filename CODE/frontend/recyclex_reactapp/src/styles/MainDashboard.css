@@ -1,0 +1,138 @@
+/* Dashboard.css */
+.dashboard-container {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.scrollable-container {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  padding-top: 56px;
+}
+
+.section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+}
+
+.section-content {
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.content-inner {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.text-container h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.text-container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.image-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+.section-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.earth-canvas {
+  width: 100%;
+  height: 300px;
+  max-width: 500px;
+  margin: 20px auto 0;
+}
+
+.home-section .section-content {
+  color: black;
+}
+
+.home-section .image-container {
+  display: none;
+}
+
+.home-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ensure it takes the full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.home-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Ensure full coverage */
+  object-fit: cover; /* Ensures the image fills the container */
+  z-index: -1;
+}
+
+.section:not(.home-section) .section-content {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .content-inner {
+    flex-direction: column;
+  }
+
+  .text-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .text-container p {
+    font-size: 1rem;
+  }
+}
+
+.navbar {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.navbar-nav .nav-link {
+  color: black;
+  margin-left: 1rem;
+}

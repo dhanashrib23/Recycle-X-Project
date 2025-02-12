@@ -1,0 +1,144 @@
+/* ConsumerNavbar.module.css */
+.consumerNavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0;
+}
+
+.navbarLeft {
+    display: flex;
+    align-items: center;
+}
+
+.navbarBrand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.navbarLogo {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.navbarTitle {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.navbarNav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navItem {
+    margin-left: 20px;
+}
+
+.navLink {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.navLink:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.navbarRight {
+    display: flex;
+    align-items: center;
+}
+
+.navIcon {
+    margin-left: 20px;
+    color: #333;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.navIcon:hover {
+    color: #007bff;
+}
+
+.icon {
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+}
+
+
+@media (max-width: 768px) {
+    .consumerNavbar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem;
+    }
+
+    .navbarLeft {
+        flex-basis: auto;
+        /* Adjust as needed */
+    }
+
+    .navbarCenter {
+        display: none;
+        flex-basis: 100%;
+        margin-top: 10px;
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-100%);
+    }
+
+    .navbarNav {
+        flex-direction: column;
+    }
+
+    .navItem {
+        margin: 5px 0;
+    }
+
+    .navbarRight {
+        flex-basis: auto;
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+
+    .navIcon {
+        margin: 0 10px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .open {
+        transform: translateY(0);
+    }
+}

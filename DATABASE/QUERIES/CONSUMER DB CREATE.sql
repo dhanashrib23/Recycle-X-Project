@@ -81,7 +81,7 @@ CREATE TABLE consumerSelections (
     rp_category_id INT,
   
     -- Foreign key constraints
-    FOREIGN KEY (consumer_id) REFERENCES consumer(consumer_id) ON DELETE SET NULL,
+    FOREIGN KEY (consumer_id) REFERENCES consumer(consumer_id),
     FOREIGN KEY (rp_category_id) REFERENCES recyclingCategories(rp_category_id) ON DELETE SET NULL
 );
 
@@ -108,7 +108,7 @@ CREATE TABLE deliveryAddress (
     extra_col5 VARCHAR(255) DEFAULT NULL INVISIBLE,
 
     -- Foreign key
-    FOREIGN KEY (consumer_id) REFERENCES consumer(consumer_id) ON DELETE SET NULL
+    FOREIGN KEY (consumer_id) REFERENCES consumer(consumer_id) 
 );
 
 -- ConsumerOrder table
@@ -132,7 +132,7 @@ CREATE TABLE consumerOrders (
     extra_col5 VARCHAR(255) DEFAULT NULL INVISIBLE,
 
     -- Foreign key
-    FOREIGN KEY (consumer_id) REFERENCES consumer(consumer_id) ON DELETE SET NULL,
+    FOREIGN KEY (consumer_id) REFERENCES consumer(consumer_id) ,
     FOREIGN KEY (delivery_id) REFERENCES deliveryAddress(delivery_id) ON DELETE SET NULL
 );
 
@@ -164,6 +164,7 @@ CREATE TABLE consumerOrderItems (
 CREATE TABLE consumerCart ( 
     item_id INT PRIMARY KEY AUTO_INCREMENT,
     subcategory_id INT,
+    consumer_id INT NOT NULL,
     -- Quantity must be greater than 1Kg
     quantity_kg FLOAT NOT NULL CHECK(quantity_kg > 1),
 
@@ -174,7 +175,8 @@ CREATE TABLE consumerCart (
     extra_col4 VARCHAR(255) DEFAULT NULL INVISIBLE,
     extra_col5 VARCHAR(255) DEFAULT NULL INVISIBLE,
     -- Foreign keys
-    FOREIGN KEY (subcategory_id) REFERENCES recyclingSubcategories(subcategory_id) ON DELETE SET NULL
+    FOREIGN KEY (subcategory_id) REFERENCES recyclingSubcategories(subcategory_id) ON DELETE SET NULL,
+    FOREIGN KEY (consumer_id) REFERENCES consumer(consumer_id)
 );
 
 -- View for Consumer
@@ -236,7 +238,8 @@ CREATE VIEW consumerCart_v AS
 SELECT 
     item_id,
     subcategory_id,
-    quantity_kg
+    quantity_kg,
+    consumer_id
 FROM consumerCart;
 
 -- View for Consumer Orders

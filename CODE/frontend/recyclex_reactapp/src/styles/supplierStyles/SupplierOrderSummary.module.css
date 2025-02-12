@@ -1,0 +1,178 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.error {
+    background-color: #fee2e2;
+    border: 1px solid #ef4444;
+    color: #dc2626;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    margin-bottom: 1rem;
+}
+
+.addressSection {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.addressSection h3,
+.orderSummary h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.addressSection select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+.addressForm {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f9fafb;
+    border-radius: 0.375rem;
+}
+
+.addressForm input {
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+}
+
+.addressForm input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 1px #3b82f6;
+}
+
+.addressDisplay {
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    margin-top: 1rem;
+    background-color: #f9fafb;
+}
+
+.addressDisplay p {
+    margin: 0.25rem 0;
+    font-size: 0.875rem;
+    color: #4b5563;
+}
+
+/* Button Styles */
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: auto;
+    min-width: 100px;
+    max-width: 200px;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+button[type="submit"],
+button[onClick*="PlaceOrder"] {
+    background-color: #3b82f6;
+    color: white;
+}
+
+button[type="submit"]:hover,
+button[onClick*="PlaceOrder"]:hover {
+    background-color: #2563eb;
+}
+
+button[type="button"] {
+    background-color: #e5e7eb;
+    color: #4b5563;
+}
+
+button[type="button"]:hover {
+    background-color: #d1d5db;
+}
+
+.editBtn,
+.deleteBtn {
+    margin: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+}
+
+.editBtn {
+    background-color: #059669;
+    color: white;
+}
+
+.editBtn:hover {
+    background-color: #047857;
+}
+
+.deleteBtn {
+    background-color: #ef4444;
+    color: white;
+}
+
+.deleteBtn:hover {
+    background-color: #dc2626;
+}
+
+/* Order Summary Styles */
+.orderSummary {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.cartTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.cartTable th,
+.cartTable td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.cartTable th {
+    background-color: #f9fafb;
+    font-weight: 600;
+    color: #374151;
+}
+
+.cartTable td {
+    color: #4b5563;
+}
+
+.total {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 1rem 0;
+    text-align: right;
+}

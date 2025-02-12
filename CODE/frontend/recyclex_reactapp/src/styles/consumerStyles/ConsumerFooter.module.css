@@ -1,0 +1,91 @@
+/* ConsumerFooter.module.css */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footerContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.footerSection {
+    flex: 1 1 200px;
+    min-width: 200px;
+}
+
+.footerSection h5 {
+    color: #10b981;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.footerSection ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footerSection li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.footerSection a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footerSection a:hover {
+    color: #10b981;
+}
+
+.contactInfo p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.contactInfo a {
+    color: #10b981;
+    font-weight: bold;
+}
+
+.socialIcons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.socialIcons a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.socialIcons a:hover {
+    color: #10b981;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .footerContent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footerSection {
+        text-align: center;
+    }
+}
