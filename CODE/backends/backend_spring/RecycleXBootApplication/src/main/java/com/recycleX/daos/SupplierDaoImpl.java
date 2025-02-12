@@ -103,24 +103,28 @@ public class SupplierDaoImpl implements SupplierDaoable {
 
 	@Override
 	public List<SupplierTrashSummary> findMonthlyTrashSummaryForAll() {
-		String sql = "SELECT ts.category_id, ts.category_name, SUM(soi.quantity_kg) AS total_quantity_kg, 'monthly' AS period "
-				+ "FROM supplierorderitems_v soi "
-				+ "JOIN trashsubcategories ts ON soi.subcategory_id = ts.subcategory_id "
-				+ "JOIN supplierorders_v so ON soi.order_id = so.order_id "
-				+ "WHERE so.order_status = 'completed' AND YEAR(so.order_date) = YEAR(CURDATE()) "
-				+ "AND MONTH(so.order_date) = MONTH(CURDATE()) " + "GROUP BY ts.category_id, ts.category_name";
+		String sql = "SELECT tc.category_id, tc.category_name, SUM(soi.quantity_kg) AS total_quantity_kg, 'monthly' AS period " +
+                "FROM supplierorderitems_v soi " +
+                "JOIN trashsubcategories_v ts ON soi.subcategory_id = ts.subcategory_id " +
+                "JOIN trashcategories_v tc ON ts.category_id = tc.category_id " +  // Corrected Join
+                "JOIN supplierorders_v so ON soi.order_id = so.order_id " +
+                "WHERE so.order_status = 'completed' " +
+                "AND YEAR(so.order_date) = YEAR(CURDATE()) " +
+                "AND MONTH(so.order_date) = MONTH(CURDATE()) " +
+                "GROUP BY tc.category_id, tc.category_name";
 
 		return jdbcTemplate.query(sql, summaryRowMapper);
 	}
 
 	@Override
 	public List<SupplierTrashSummary> findYearlyTrashSummaryForAll() {
-		String sql = "SELECT ts.category_id, ts.category_name, SUM(soi.quantity_kg) AS total_quantity_kg, 'yearly' AS period "
-				+ "FROM supplierorderitems_v soi "
-				+ "JOIN trashsubcategories ts ON soi.subcategory_id = ts.subcategory_id "
-				+ "JOIN supplierorders_v so ON soi.order_id = so.order_id "
-				+ "WHERE so.order_status = 'completed' AND YEAR(so.order_date) = YEAR(CURDATE()) "
-				+ "GROUP BY ts.category_id, ts.category_name";
+		String sql = "SELECT tc.category_id, tc.category_name, SUM(soi.quantity_kg) AS total_quantity_kg, 'yearly' AS period "
+	            + "FROM supplierorderitems_v soi "
+	            + "JOIN trashsubcategories_v ts ON soi.subcategory_id = ts.subcategory_id "
+	            + "JOIN trashcategories_v tc ON ts.category_id = tc.category_id "
+	            + "JOIN supplierorders_v so ON soi.order_id = so.order_id "
+	            + "WHERE so.order_status = 'completed' AND YEAR(so.order_date) = YEAR(CURDATE()) "
+	            + "GROUP BY tc.category_id, tc.category_name";
 
 		return jdbcTemplate.query(sql, summaryRowMapper);
 	}
@@ -141,7 +145,7 @@ public class SupplierDaoImpl implements SupplierDaoable {
 	public int saveTrashCategory(TrashCategory trashCategory) {
 		try {
 			String imageName = FileUploadUtils.saveImage(trashCategory.getCategoryImage(),
-					"/src/main/resources/supplierImages/categories/");
+					"supplierImages/categories/");
 			// SQL to insert trash category data into the database
 			String sql = "INSERT INTO trashcategories_v (category_name, category_description, category_image) "
 					+ "VALUES (?, ?, ?)";
@@ -159,7 +163,7 @@ public class SupplierDaoImpl implements SupplierDaoable {
 	public int saveTrashSubCategory(TrashSubCategory trashSubcategory) {
 		try {
 			String imageName = FileUploadUtils.saveImage(trashSubcategory.getSubcategoryImage(),
-					"/src/main/resources/supplierImages/subcategories/");
+					"supplierImages/subcategories/");
 			String sql = "INSERT INTO trashsubcategories_v (category_id, subcategory_name, price_per_kg, subcategory_image) "
 					+ "VALUES (?, ?, ?, ?)";
 			return jdbcTemplate.update(sql, trashSubcategory.getCategoryId(), trashSubcategory.getSubcategoryName(),

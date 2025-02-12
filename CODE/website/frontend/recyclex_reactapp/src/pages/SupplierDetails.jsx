@@ -6,14 +6,14 @@ import styles from "../styles/SupplierDetails.module.css";
 const SupplierDetails = () => {
   const { supplierId } = useParams();
   const [supplier, setSupplier] = useState(null);
-  const [loading, setLoading] = useState(true); // Add loading state
-  const [error, setError] = useState(null); // Add error state
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchSupplierDetails = async () => {
-      setLoading(true); // Set loading to true before fetching
-      setError(null); // Clear any previous errors
+      setLoading(true);
+      setError(null);
 
       try {
         const response = await axios.get(
@@ -22,19 +22,19 @@ const SupplierDetails = () => {
         setSupplier(response.data.data);
       } catch (error) {
         console.error("Error fetching supplier details:", error);
-        setError("Error fetching supplier details. Please try again later."); // Set error message
+        setError("Error fetching supplier details. Please try again later.");
       } finally {
-        setLoading(false); // Set loading to false after fetch, regardless of success/failure
+        setLoading(false);
       }
     };
 
     fetchSupplierDetails();
-  }, [supplierId]); // Add supplierId to dependency array
+  }, [supplierId]);
 
-  if (loading) return <p>Loading...</p>; // Display loading message while fetching
-  if (error) return <p>{error}</p>; // Display error message if any
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
 
-  if (!supplier) return <p>Supplier not found.</p>; // Handle the case where supplier is null after loading
+  if (!supplier) return <p>Supplier not found.</p>;
 
   return (
     <div className={styles.container}>

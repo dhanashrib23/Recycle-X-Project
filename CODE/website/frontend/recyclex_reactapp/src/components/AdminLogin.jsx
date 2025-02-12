@@ -27,19 +27,19 @@ const AdminLogin = () => {
         const response = await axios.post(
           "http://localhost:8080/admin/signin",
           {
-            email, // Changed from username to email
+            email,
             password,
           },
           {
             headers: {
               "Content-Type": "application/json",
             },
-            withCredentials: true, // Important for CORS
+            withCredentials: true,
           }
         );
 
         if (response.data && response.data.status === "success") {
-          sessionStorage.setItem("adminId", response.data.data.adminId); // Store only adminId
+          sessionStorage.setItem("adminId", response.data.data.adminId);
           navigate("/admin/dashboard");
         } else {
           alert(response.data?.message || "Invalid email or password.");

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import styles from "../styles/ConsumerDetails.module.css"; // Import different CSS
+import styles from "../styles/ConsumerDetails.module.css";
 
 const ConsumerDetails = () => {
   const { consumerId } = useParams();
@@ -57,7 +57,6 @@ const ConsumerDetails = () => {
         <p>
           <strong>Pincode:</strong> {consumer.pincode}
         </p>
-        {/* Add any other consumer-specific details here */}
       </div>
       <button
         className={styles.backBtn}

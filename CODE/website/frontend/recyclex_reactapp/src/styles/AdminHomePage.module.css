@@ -1,4 +1,3 @@
-/* AdminHomePage.module.css */
 .container {
   display: flex;
   flex-direction: column;
@@ -68,7 +67,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-right: 5px; /* Space between buttons */
+  margin-right: 5px; 
 }
 
 .viewBtn:hover {
@@ -107,13 +106,37 @@
 }
 
 .trashButton {
-  background-color: #ff9800; /* Orange */
+  background-color: #ff9800;
 }
 
 .recycleButton {
-  background-color: #2196f3; /* Blue */
+  background-color: #2196f3;
 }
 
 .trashButton:hover, .recycleButton:hover {
   opacity: 0.8;
+}
+
+.bottomButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.leftButton, .rightButton {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.leftButton {
+  background-color: #28a745; 
+  color: white;
+}
+
+.rightButton {
+  background-color: #007bff; 
+  color: white;
 }

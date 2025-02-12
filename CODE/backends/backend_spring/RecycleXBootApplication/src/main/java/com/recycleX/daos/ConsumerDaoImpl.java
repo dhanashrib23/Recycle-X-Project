@@ -57,9 +57,10 @@ public class ConsumerDaoImpl implements ConsumerDaoable {
 
 	@Override
 	public List<ConsumerOrderItem> findOrderItemsByOrderId(int orderId) {
-		String sql = "SELECT coi.subcategory_id, ts.subcategory_name, coi.quantity_kg, ts.image_name "
-				+ "FROM consumerorderitems_v coi "
-				+ "JOIN trashsubcategories_v ts ON coi.subcategory_id = ts.subcategory_id " + "WHERE coi.order_id = ?";
+	    String sql = "SELECT coi.subcategory_id, rc.rp_category_name, coi.quantity_kg, rc.rp_category_image " +
+                "FROM consumerorderitems_v coi " +
+                "JOIN recyclingcategories_v rc ON coi.subcategory_id = rc.rp_category_id " +
+                "WHERE coi.order_id = ?";
 		return jdbcTemplate.query(sql, itemRowMapper, orderId);
 	}
 
@@ -79,7 +80,7 @@ public class ConsumerDaoImpl implements ConsumerDaoable {
 	public int saveRecyclingCategory(RecyclingCategory recyclingCategory) {
 		try {
 			String imageName = FileUploadUtils.saveImage(recyclingCategory.getCategoryImage(),
-					"/src/main/resources/consumerImages/categories/");
+					"consumerImages/categories/");
 			
 			String sql = "INSERT INTO recyclingcategories_v (rp_category_name, category_description, rp_category_image) VALUES (?, ?, ?)";
 
@@ -97,7 +98,7 @@ public class ConsumerDaoImpl implements ConsumerDaoable {
         try {
             String imageName = FileUploadUtils.saveImage(
                     recyclingSubcategory.getSubcategoryImage(), 
-                    "/src/main/resources/consumerImages/subcategories/"
+                    "consumerImages/subcategories/"
             );
 
             String sql = "INSERT INTO recyclingsubcategories_v (rp_category_id, subcategory_name, price_per_kg, subcategory_image) VALUES (?, ?, ?, ?)";

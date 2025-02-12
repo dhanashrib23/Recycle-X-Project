@@ -3,10 +3,10 @@ package com.recycleX.models.consumer;
 public class ConsumerOrderItem {
 	private Integer subcategoryId;
 	private String subcategoryName;
-	private Integer quantity;
+	private Float quantity;
 	private String imageName;
-
-	public ConsumerOrderItem(Integer subcategoryId, String subcategoryName, Integer quantity, String imageName) {
+	
+	public ConsumerOrderItem(Integer subcategoryId, String subcategoryName, Float quantity, String imageName) {
 		this.subcategoryId = subcategoryId;
 		this.subcategoryName = subcategoryName;
 		this.quantity = quantity;
@@ -21,7 +21,7 @@ public class ConsumerOrderItem {
 		return subcategoryName;
 	}
 
-	public Integer getQuantity() {
+	public Float getQuantity() {
 		return quantity;
 	}
 
@@ -37,7 +37,7 @@ public class ConsumerOrderItem {
 		this.subcategoryName = subcategoryName;
 	}
 
-	public void setQuantity(Integer quantity) {
+	public void setQuantity(Float quantity) {
 		this.quantity = quantity;
 	}
 
@@ -49,5 +49,6 @@ public class ConsumerOrderItem {
 	public String toString() {
 		return "ConsumerOrderItem [subcategoryId=" + subcategoryId + ", subcategoryName=" + subcategoryName
 				+ ", quantity=" + quantity + ", imageName=" + imageName + "]";
-	}
+	}	
+	
 }

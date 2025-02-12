@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class ConsumerOrderItemRowMapper implements RowMapper<ConsumerOrderItem> {
 	@Override
 	public ConsumerOrderItem mapRow(ResultSet rs, int rowNum) throws SQLException {
-		return new ConsumerOrderItem(rs.getInt("subcategory_id"), rs.getString("subcategory_name"),
-				rs.getInt("quantity_kg"), rs.getString("image_name"));
+		return new ConsumerOrderItem(rs.getInt("subcategory_id"), rs.getString("rp_category_name"),
+				rs.getFloat("quantity_kg"), rs.getString("rp_category_image"));
 	}
 }
